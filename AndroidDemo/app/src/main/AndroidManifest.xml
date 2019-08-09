@@ -45,7 +45,7 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name="com.freenow.android_demo.activities.AuthenticationActivity"
-            android:label="@string/title_activity_authentication"></activity>
+            android:label="@string/title_activity_authentication" android:windowSoftInputMode="adjustResize"></activity>
     </application>
 
 </manifest>
