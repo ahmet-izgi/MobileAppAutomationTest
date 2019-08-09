@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/../MobileAppAutomationTest
+    working_directory: ~/code/MobileAppAutomationTest
     docker:
       - image: circleci/android:api-25-alpha
     environment:
