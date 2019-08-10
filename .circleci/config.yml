@@ -47,7 +47,8 @@ jobs:
           background: true
       - run:
           name: Run Tests
-          command: ./gradlew app:connectedAndroidTest      - run:
+          command: ./gradlew app:connectedAndroidTest      
+      - run:
           name: Run EspressoTests
           command: ./gradlew connectedAndroidTest -PdisablePreDex
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/ 
