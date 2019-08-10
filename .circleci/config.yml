@@ -22,10 +22,10 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Install emulator dependencies
-          command: (yes | sdkmanager "platform-tools" "platforms;android-26" "extras;intel;Hardware_Accelerated_Execution_Manager" "build-tools;26.0.0" "system-images;android-26;google_apis;x86" "emulator" --verbose) || true
+          command: (yes | sdkmanager "platform-tools" "platforms;android-27" "extras;intel;" "build-tools;27.0.0" "system-images;android-27;google_apis;x86" "emulator" --verbose) || true
       - run:
           name: AVD MANAGER
-          command: avdmanager --list
+          command: avdmanager create avd --force --name testAVD --package 'android-27'
       - run:
           name: Launch emulator
           command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel on
