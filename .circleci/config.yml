@@ -36,9 +36,3 @@ jobs:
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: app/build/test-results
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
-      
-          - echo no | android create avd -n custom-android22-googleapis -t "android-22" --abi google_apis/armeabi-v7a
-    - android list avd
-    - emulator -avd custom-android22-googleapis -no-audio -no-window:
-        background: true
-        parallel: true
