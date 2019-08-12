@@ -31,16 +31,6 @@ jobs:
           command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator -avd test -no-audio -no-boot-anim -no-window -accel on -gpu off
           background: true
       - run:
-          name: Install emulator dependencies
-          command: (yes | sdkmanager "platform-tools" "platforms;android-27" "build-tools;27.0.0" "android-27" "emulator" --verbose) || true
-      - run:
-          name: AVD MANAGER
-          command: avdmanager create avd  -n testAVD -k "system-images;android-27"
-      - run:
-          name: Launch emulator
-          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel on
-          background: true
-      - run:
           name: Wait emulator
           command: |
             # wait for it to have booted
