@@ -67,7 +67,6 @@ public class FreeNowLoginTests {
         homePage.logout();
     }
 
-
     @Test
     public void search_valid_driver_and_open_profile() throws InterruptedException {
         new LoginPage().login("crazydog335", "venture");
