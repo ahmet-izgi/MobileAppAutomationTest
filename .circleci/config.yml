@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/AndroidDemo
     docker:
-        - image: circleci/android:api-27-alpha
+        - image: circleci/android:api-25-alpha
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
@@ -28,7 +28,7 @@ jobs:
           command: sudo apt-get install libpulse-dev
       - run:
           name: Setup emulator
-          command: echo y | sdkmanager "platform-tools" "platforms;android-27" "emulator" "system-images;android-27;default;x86_64" && echo "no" | avdmanager create avd --force -n test -k "system-images;android-27;default;x86_64"
+          command: echo y | sdkmanager "platform-tools" "platforms;android-27" "emulator" "system-images;android-25;google_apis;arm64-v8a" && echo "no" | avdmanager create avd --force -n test -k "system-images;android-25;google_apis;arm64-v8a"
       - run:
           name: Launch emulator
           command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator -avd test -no-audio -no-boot-anim -no-window -accel on -gpu off
